@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix B/Stack - Premier Student Tech Club \u0026 Engineering Guild",
+  "description": "Official platform for B/Stack tech club: immersive 3D experience, event calendar, attendance tracking, project incubator, and specialized vertical workspaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

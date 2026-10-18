@@ -1,0 +1,146 @@
+{
+  "googleClientId": "906835843124-brbnevasb697lai3q3dtrtersj0742u5.apps.googleusercontent.com",
+  "authorized_editors": [
+    "ziyadparkar01@gmail.com",
+    "aishik.roy1234@gmail.com",
+    "propriyansh71@gmail.com"
+  ],
+  "events": [
+    {
+      "id": "evt-icpc-prep-2026",
+      "title": "ICPC Regional Sprint & Advanced Segment Trees",
+      "description": "Intensive competitive programming workshop dissecting lazy propagation, 2D range query trees, and flow networks for upcoming regionals.",
+      "vertical": "balgo",
+      "date": "2026-10-24",
+      "time": "18:00 - 20:30 IST",
+      "duration": "2.5 hrs",
+      "location": "Turing Lab 402 / Virtual Sandbox",
+      "locationType": "hybrid",
+      "host": "Aishik Roy (Tech Club Head)",
+      "hostAvatar": "/src/assets/images/arsh_shukla_1792227353707.jpg",
+      "attendeesCount": 38,
+      "maxCapacity": 50,
+      "rsvpStatus": "attending",
+      "attendanceVerified": true,
+      "checkinCode": "TREE99",
+      "tags": [
+        "Competitive Programming",
+        "ICPC",
+        "Data Structures"
+      ],
+      "agenda": [
+        "Segment tree basics with lazy updates",
+        "Fenwick tree multidimensional variations",
+        "Live Codeforces Div 1 mock round",
+        "Q&A and code walk-throughs"
+      ],
+      "prerequisites": [
+        "Proficiency in C++ / Java",
+        "Basic tree and recursion knowledge"
+      ]
+    },
+    {
+      "id": "evt-robotics-bringup-2026",
+      "title": "Autonomous Rover Hardware Bring-up & ROS2 Nodes",
+      "description": "Hands-on hardware session: flash micro-ROS on ESP32, bring up lidar SLAM pipelines, and calibrate differential drive kinematics on the club rover chassis.",
+      "vertical": "beuild",
+      "date": "2026-10-28",
+      "time": "15:30 - 18:30 IST",
+      "duration": "3 hrs",
+      "location": "Hardware Prototyping Bay B",
+      "locationType": "physical",
+      "host": "Harshit Vyas (Robotics Lead)",
+      "attendeesCount": 24,
+      "maxCapacity": 30,
+      "rsvpStatus": "none",
+      "attendanceVerified": false,
+      "checkinCode": "ROV404",
+      "tags": [
+        "Hardware",
+        "ROS2",
+        "Robotics",
+        "Firmware"
+      ],
+      "agenda": [
+        "Sensor bus wiring & serial telemetry",
+        "micro-ROS agent handshake",
+        "Lidar mapping in RViz2",
+        "Outdoor path following test"
+      ],
+      "prerequisites": [
+        "Linux terminal comfort",
+        "Basic ROS concepts"
+      ]
+    },
+    {
+      "id": "evt-dist-systems-2026",
+      "title": "Distributed Consensus: Raft Protocol From Scratch",
+      "description": "Deep dive into fault tolerance and distributed state machine replication. We will implement leader election and log replication in Go.",
+      "vertical": "bdev",
+      "date": "2026-11-04",
+      "time": "17:00 - 19:30 IST",
+      "duration": "2.5 hrs",
+      "location": "Discord Stage & Systems Lab",
+      "locationType": "hybrid",
+      "host": "Ziyad Parkar",
+      "attendeesCount": 45,
+      "maxCapacity": 60,
+      "rsvpStatus": "none",
+      "attendanceVerified": false,
+      "checkinCode": "RAFT26",
+      "tags": [
+        "Distributed Systems",
+        "Go",
+        "Consensus",
+        "Cloud"
+      ],
+      "agenda": [
+        "Split-brain problem & quorum mechanics",
+        "Raft heartbeat & term elections",
+        "Log consistency proofs",
+        "Live chaos testing"
+      ],
+      "prerequisites": [
+        "Go or Rust fundamentals"
+      ]
+    },
+    {
+      "id": "evt-hackathon-prep-2026",
+      "title": "48-Hour Hackathon War Room & Fast Prototyping",
+      "description": "Guild-wide sprint simulating high-pressure hackathons. Forming multi-disciplinary teams across AI, systems, and full-stack.",
+      "vertical": "all",
+      "date": "2026-11-12",
+      "time": "14:00 - 20:00 IST",
+      "duration": "6 hrs",
+      "location": "Bosscoder Innovation Central",
+      "locationType": "physical",
+      "host": "Aishik Roy & Ziyad Parkar",
+      "attendeesCount": 56,
+      "maxCapacity": 80,
+      "rsvpStatus": "none",
+      "attendanceVerified": false,
+      "checkinCode": "HACK01",
+      "tags": [
+        "Hackathon",
+        "Full Stack",
+        "AI Prototyping"
+      ],
+      "agenda": [
+        "Pitch deck formation",
+        "Tech stack architecture selection",
+        "6-hour build challenge",
+        "Live demo presentations"
+      ],
+      "prerequisites": [
+        "Bring your laptop and charger"
+      ]
+    }
+  ],
+  "rsvps": {},
+  "securityKey": "BSTACK-SECURE-2026",
+  "messageCentral": {
+    "customerId": "C-ABD64BCE2761412",
+    "key": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDLUFCRDY0QkNFMjc2MTQxMiIsImlhdCI6MTc5MjI1NTczMSwiZXhwIjoxOTQ5OTM1NzMxfQ.n-fpjNwwEgGAcz_WRKfMY3o2r60Pq_A_C1F8zB0P9BhzYlo2E1aASInTBa81vNLgXjyNXzqwea8Rr9bHmQuh9g",
+    "authToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDLUFCRDY0QkNFMjc2MTQxMiIsImlhdCI6MTc5MjI1NTczMSwiZXhwIjoxOTQ5OTM1NzMxfQ.n-fpjNwwEgGAcz_WRKfMY3o2r60Pq_A_C1F8zB0P9BhzYlo2E1aASInTBa81vNLgXjyNXzqwea8Rr9bHmQuh9g"
+  }
+}

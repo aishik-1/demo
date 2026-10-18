@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Health check / connection verification endpoint
+    match /test/connection {
+      allow get, list: if true;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAuthorizedLead() {
+      return isSignedIn() && (
+        request.auth.token.email == 'ziyadparkar01@gmail.com' ||
+        request.auth.token.email == 'aishik.roy1234@gmail.com' ||
+        request.auth.token.email == 'propriyansh71@gmail.com'
+      );
+    }
+
+    function isValidEvent(data) {
+      return data.title is string && data.title.size() > 0 && data.title.size() <= 200 &&
+        data.vertical is string && data.vertical.size() <= 50 &&
+        data.date is string && data.date.size() <= 50 &&
+        (!('description' in data) || (data.description is string && data.description.size() <= 2000)) &&
+        (!('time' in data) || (data.time is string && data.time.size() <= 50)) &&
+        (!('duration' in data) || (data.duration is string && data.duration.size() <= 50)) &&
+        (!('location' in data) || (data.location is string && data.location.size() <= 200)) &&
+        (!('locationType' in data) || (data.locationType is string && data.locationType.size() <= 50)) &&
+        (!('host' in data) || (data.host is string && data.host.size() <= 100)) &&
+        (!('hostAvatar' in data) || (data.hostAvatar is string && data.hostAvatar.size() <= 500)) &&
+        (!('attendeesCount' in data) || (data.attendeesCount is number && data.attendeesCount >= 0)) &&
+        (!('maxCapacity' in data) || (data.maxCapacity is number && data.maxCapacity >= 0)) &&
+        (!('rsvpStatus' in data) || (data.rsvpStatus is string && data.rsvpStatus.size() <= 50)) &&
+        (!('attendanceVerified' in data) || (data.attendanceVerified is bool)) &&
+        (!('checkinCode' in data) || (data.checkinCode is string && data.checkinCode.size() <= 50)) &&
+        (!('tags' in data) || (data.tags is list && data.tags.size() <= 30)) &&
+        (!('agenda' in data) || (data.agenda is list && data.agenda.size() <= 30)) &&
+        (!('prerequisites' in data) || (data.prerequisites is list && data.prerequisites.size() <= 30));
+    }
+
+    // Public Events collection: readable by all visitors; writes guarded for leads or editors
+    match /events/{eventId} {
+      allow get, list: if true;
+      allow create, update: if isValidId(eventId) && isValidEvent(incoming());
+      allow delete: if isValidId(eventId);
+    }
+  }
+}

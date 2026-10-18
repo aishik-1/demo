@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-handwriting: 'Kalam', 'Caveat', cursive, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #030305;
+    color: #f8fafc;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+
+  /* Smooth touch scrolling on iOS & Android */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .font-editorial {
+    font-family: var(--font-serif);
+  }
+
+  .font-body {
+    font-family: var(--font-sans);
+  }
+
+  .font-handwriting {
+    font-family: var(--font-handwriting);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030305;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Luxury Liquid Glass Styling (from reference video) */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.14);
+}
+
+.liquid-glass-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-hover:hover {
+  background: rgba(255, 255, 255, 0.065);
+  border-color: rgba(186, 230, 253, 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 35px 70px -10px rgba(0, 0, 0, 0.65), 0 0 25px rgba(56, 189, 248, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.liquid-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.18);
+}
+
+.liquid-pill-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-pill-hover:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(186, 230, 253, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+/* Infinite Marquee Animation (120hz smooth) */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-slow-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-slow-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Multi-directional gentle floating keyframes for constellation graph nodes */
+@keyframes float-node-1 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes float-node-2 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 7px, 0);
+  }
+}
+
+@keyframes float-node-3 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(4px, -6px, 0);
+  }
+}
+
+@keyframes float-node-4 {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-4px, 5px, 0);
+  }
+}
+
+.animate-float-node-1 {
+  animation: float-node-1 6.5s ease-in-out infinite;
+}
+
+.animate-float-node-2 {
+  animation: float-node-2 7.5s ease-in-out infinite;
+}
+
+.animate-float-node-3 {
+  animation: float-node-3 8.5s ease-in-out infinite;
+}
+
+.animate-float-node-4 {
+  animation: float-node-4 7s ease-in-out infinite;
+}

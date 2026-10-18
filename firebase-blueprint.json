@@ -1,0 +1,107 @@
+{
+  "entities": {
+    "event": {
+      "title": "ClubEvent",
+      "description": "An upcoming tech club workshop, hackathon, or training session",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique event identifier",
+          "maxLength": 128
+        },
+        "title": {
+          "type": "string",
+          "description": "Event headline title",
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed event summary",
+          "maxLength": 2000
+        },
+        "vertical": {
+          "type": "string",
+          "description": "Club vertical (balgo, beuild, bdev, bhack, or all)",
+          "maxLength": 50
+        },
+        "date": {
+          "type": "string",
+          "description": "Date of event in YYYY-MM-DD or formatted string",
+          "maxLength": 50
+        },
+        "time": {
+          "type": "string",
+          "description": "Time range string",
+          "maxLength": 50
+        },
+        "duration": {
+          "type": "string",
+          "description": "Event duration string",
+          "maxLength": 50
+        },
+        "location": {
+          "type": "string",
+          "description": "Venue or virtual link description",
+          "maxLength": 200
+        },
+        "locationType": {
+          "type": "string",
+          "description": "physical, hybrid, or virtual",
+          "maxLength": 50
+        },
+        "host": {
+          "type": "string",
+          "description": "Name and designation of host",
+          "maxLength": 100
+        },
+        "hostAvatar": {
+          "type": "string",
+          "description": "Host avatar URL",
+          "maxLength": 500
+        },
+        "attendeesCount": {
+          "type": "number",
+          "description": "Current number of attendees"
+        },
+        "maxCapacity": {
+          "type": "number",
+          "description": "Maximum room or registration capacity"
+        },
+        "rsvpStatus": {
+          "type": "string",
+          "description": "User RSVP status",
+          "maxLength": 50
+        },
+        "attendanceVerified": {
+          "type": "boolean",
+          "description": "Whether check-in attendance has been verified"
+        },
+        "checkinCode": {
+          "type": "string",
+          "description": "Active check-in verification passcode",
+          "maxLength": 50
+        },
+        "tags": {
+          "type": "array",
+          "description": "Topic and skill tags"
+        },
+        "agenda": {
+          "type": "array",
+          "description": "Event session agenda breakdown"
+        },
+        "prerequisites": {
+          "type": "array",
+          "description": "Prerequisite tools or skills"
+        }
+      },
+      "required": ["title", "vertical", "date"]
+    }
+  },
+  "firestore": {
+    "/events/{eventId}": {
+      "schema": "event",
+      "description": "Publicly readable club events synchronized live for all visitors and editable by club leads."
+    }
+  }
+}
